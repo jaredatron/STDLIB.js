@@ -1,0 +1,4 @@
+//= require_self
+<% env = environment.instance_variable_get(:@environment) %>
+<%= env.comment %>
+<% env.libraries.each{|asset| require_asset asset } %>
