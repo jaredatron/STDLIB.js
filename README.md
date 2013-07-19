@@ -9,6 +9,11 @@ Most of STDLIB.js has been heavily borrowed from or inspired by the following li
   * [es5-shim.js](https://github.com/kriskowal/es5-shim/)
 
 
+## WARNING
+
+__This is some serious BETA software__. All of code borrowed has not had it's tests ported yet and there is no documentation to speak of. That said I am actively working on this so I should have an rc1 out soon.
+
+
 ## STDLIB.js is also a Ruby GEM
 
 ### Why?
@@ -51,3 +56,8 @@ And build away:
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## TODO
+
+* Finish porting / writing all of the tests
+* Come up with some form of documentation to be available at [stdlibjs.com](http://stdlibjs.com)
