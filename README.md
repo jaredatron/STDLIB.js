@@ -1,41 +1,47 @@
-# stdlibjs
-
-This gem holds the authoritative source files for Stdlib.js
-
-It also provides an executable `stdlibjs`
+# STDLIB.js
 
 
-## What this gem does
+STDLIB.js is a collection of commonly desired polyfills and additions that extend native JavaScript objects.
 
-  * houses the authoritative source files
-  * compiles any combination of the stdlib source files
-  * runs the specs for any combination of the stdlib files
-  * provides a bin for compiling a stdlib configuration
+Most of STDLIB.js has been heavily borrowed from or inspired by the following libraries:
+
+  * [prototype.js](http://prototypejs.org/)
+  * [es5-shim.js](https://github.com/kriskowal/es5-shim/)
 
 
-## As a Ruby Gem
+## STDLIB.js is also a Ruby GEM
 
-## Installation
+### Why?
+
+STDLIB.js uses Sprockets to build any combination of libraries available within it. Because we use sprockets you can include the the `stdlibjs` gem into any rails project that uses Sprockets and require the libraries at will.
+
+
+## Usage
+
+### Stand alone
+
+Go to [stdlibjs.com](http://stdlibjs.com), select that libraries you want, build and download.
+
+### Rails
 
 Add this line to your application's Gemfile:
 
     gem 'stdlibjs'
 
-And then execute:
+Add something like this to any JavaScript asset
 
-    $ bundle
+    //= require 'Array/include'
 
-Or install it yourself as:
-
-    $ gem install stdlibjs
-
-## Usage
+### Command line
 
 
-### Buidling from the terminal:
+Install the gem:
 
-    `stdlibjs build [options] [--] [requirement [requirement]]`
+    gem install stdlibjs
 
+And build away:
+
+    stdlibjs build Array/include Function/clone Number/times
 
 
 ## Contributing
