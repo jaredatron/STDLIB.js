@@ -16,6 +16,7 @@ module Stdlibjs
   def self.javascripts_path
     @javascripts_path ||= gem_root + relative_javascripts_path
   end
+  singleton_class.send :alias_method, :path, :javascripts_path
 
   def self.libraries
     @libraries ||= Dir[javascripts_path+'**/*.js'].map do |path|
