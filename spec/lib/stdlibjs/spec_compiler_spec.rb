@@ -23,10 +23,10 @@ describe Stdlibjs::SpecCompiler do
   end
 
   describe "#resolved_libraries" do
-    it "should a list of all the included libraries" do
+    it "should return a list of all the included libraries" do
       compiler = described_class.new libraries: %w[Arguments]
       expect(compiler.resolved_libraries).to eq Set[
-        "Object/isNaN.spec", "Object/type.spec", "Object/isNumber.spec", "Arguments.spec"
+        "isNaN.spec", "Object/type.spec", "Object/isNumber.spec", "Arguments.spec"
       ]
 
       compiler = described_class.new libraries: Stdlibjs.libraries

@@ -1,5 +1,5 @@
 describe("Object.isNaN", function(){
 
-  JasmineSupport.isXTestsFor('NaN');
+  it("see Object.isNaN tests");
 
 });
