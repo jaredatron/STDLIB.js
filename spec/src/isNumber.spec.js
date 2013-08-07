@@ -1,3 +1,5 @@
 describe("isNumber", function(){
-  it("see Object.isNumber tests");
+
+  JasmineSupport.isObjectTestsFor(isNumber, 'Number literal', 'Number');
+
 });

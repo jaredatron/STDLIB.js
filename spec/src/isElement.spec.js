@@ -1,5 +1,5 @@
 describe("isElement", function(){
 
-  it("see Object.isElement tests");
+  JasmineSupport.isObjectTestsFor(isElement, 'Element');
 
 });

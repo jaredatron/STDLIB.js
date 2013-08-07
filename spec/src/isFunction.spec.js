@@ -1,5 +1,5 @@
 describe("isFunction", function(){
 
-  it("see Object.isFunction tests");
+  JasmineSupport.isObjectTestsFor(isFunction, 'Function');
 
 });

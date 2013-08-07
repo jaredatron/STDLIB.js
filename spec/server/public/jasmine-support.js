@@ -13,7 +13,7 @@ JasmineSupport.objectsByType = {
     (new function(){})
   ],
   "created object": [
-    // Object.create({}),
+    // Object.create({}), // i dont have a way of detecting an empty created object
     Object.create({a:1})
   ],
   "Window": [
@@ -86,6 +86,11 @@ JasmineSupport.objectsByType = {
   ],
   "Prototype": [
     (function(){}).prototype,
+    (function(){
+      function constructor(){}
+      constructor.prototype.something = function(){};
+      return constructor.prototype;
+    })()
   ]
 };
 

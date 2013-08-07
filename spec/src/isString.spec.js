@@ -1,3 +1,5 @@
 describe("isString", function(){
-  it("see Object.isString tests");
+
+  JasmineSupport.isObjectTestsFor(isString, 'String', 'String literal');
+
 });

@@ -1,5 +1,5 @@
 describe("isArray", function(){
 
-  it("see Array.isArray tests");
+  JasmineSupport.isObjectTestsFor(isArray, 'Array');
 
 });
