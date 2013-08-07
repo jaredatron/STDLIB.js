@@ -4,6 +4,21 @@ JasmineSupport.returnUndefined = function(){ return undefined; }
 JasmineSupport.returnArguments = function(){ return arguments; }
 
 JasmineSupport.objectsByType = {
+  "PlainObject": [
+    {},
+    {length:0},
+    {constructor: function(){}}
+  ],
+  "constructed object": [
+    (new function(){})
+  ],
+  "created object": [
+    // Object.create({}),
+    Object.create({a:1})
+  ],
+  "Window": [
+    window
+  ],
   "Arguments": [
     JasmineSupport.returnArguments(),
     JasmineSupport.returnArguments(1,2,3)
@@ -35,18 +50,43 @@ JasmineSupport.objectsByType = {
   "Null": [
     null
   ],
-  "Number": [
+  "Number literal": [
     0,
     0.0,
     1.1
   ],
-  "String": [
+  "Number": [
+    new Number,
+    new Number(2),
+  ],
+  "String literal": [
     "",
-    "a"
+    "0",
+    "1",
+    "-1",
+    "Array",
+    "Function",
+    "Object",
+    "array",
+    "function",
+    "object"
+  ],
+  "String": [
+    new String,
+    new String('a')
   ],
   "Undefined": [
     undefined
   ],
+  "NodeList": [
+    document.body.childNodes
+  ],
+  "Text": [
+    document.body.firstChild
+  ],
+  "Prototype": [
+    (function(){}).prototype,
+  ]
 };
 
 
@@ -63,13 +103,15 @@ JasmineSupport.eachObject = function(callback){
 
 
 
-JasmineSupport.isXTestsFor = function(type){
+JasmineSupport.isObjectTestsFor = function(_function){
+  var types = [].slice.call(arguments, 1);
+  console.log('isObjectTestsFor', _function, types);
   JasmineSupport.eachObject(function(object, object_type){
-    context("when given ("+object_type+") "+jasmine.pp(object), function(){
-      var expected_return_value = object_type === type;
-      it("should return "+expected_return_value, function() {
-        expect(Object['is'+type](object)).toBe(expected_return_value);
-      });
+    // context("when given ("+object_type+") "+jasmine.pp(object), function(){
+    var expected_return_value = (types.indexOf(object_type) !== -1);
+    it('when given the '+object_type+': '+jasmine.pp(object)+' should return '+expected_return_value, function() {
+      expect(_function(object)).toBe(expected_return_value);
     });
+    // });
   });
 }

@@ -1,4 +1,5 @@
 //= require "Array/slice"
+
 Object.extendOwnProperties = function(target) {
   var p, mixin,
   mixins = Array.slice(arguments, 1),

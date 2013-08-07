@@ -1,5 +1,5 @@
 describe("Object.isHash", function(){
 
-  JasmineSupport.isXTestsFor('Hash');
+  JasmineSupport.isObjectTestsFor(Object.isHash, 'Hash');
 
 });
