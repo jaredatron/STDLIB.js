@@ -1,3 +1,6 @@
+// require 'Hash'
+
 Object.isHash = function(object) {
-  return Object.type(object) === 'Hash';
+  // return object instanceof Hash;
+  return false;
 };

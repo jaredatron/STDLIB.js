@@ -1,3 +1,4 @@
 Object.isWindow = function(object){
-  return object != null && object.window == object && object === window;
+  return object === Object.isWindow.window;
 };
+Object.isWindow.window = this;
