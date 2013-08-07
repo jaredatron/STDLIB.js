@@ -1,6 +1,6 @@
 describe("Object.isObject", function() {
 
-  JasmineSupport.isObjectTestsFor(Object.isObject,
+  describeIsXFunction(Object.isObject,
     'Object',
     'PlainObject',
     'Window',

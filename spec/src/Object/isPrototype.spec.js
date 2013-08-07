@@ -13,7 +13,7 @@ describe("Object.isPrototype", function() {
   });
 
 
-  JasmineSupport.isObjectTestsFor(Object.isPrototype, 'Prototype');
+  describeIsXFunction(Object.isPrototype, 'prototype');
 
 });
 

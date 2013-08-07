@@ -1,5 +1,5 @@
 describe("isString", function(){
 
-  JasmineSupport.isObjectTestsFor(isString, 'String', 'String literal');
+  describeIsXFunction(isString, 'String', 'String literal');
 
 });

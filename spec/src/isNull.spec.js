@@ -1,5 +1,5 @@
 describe("isNull", function(){
 
-  JasmineSupport.isObjectTestsFor(isNull, 'Null');
+  describeIsXFunction(isNull, 'Null');
 
 });
