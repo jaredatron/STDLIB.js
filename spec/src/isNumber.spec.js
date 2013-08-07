@@ -1,5 +1,5 @@
 describe("isNumber", function(){
 
-  describeIsXFunction(isNumber, 'Number number');
+  describeIsXFunction(isNumber, 'Number');
 
 });

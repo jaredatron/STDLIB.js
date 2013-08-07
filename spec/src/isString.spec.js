@@ -1,5 +1,5 @@
 describe("isString", function(){
 
-  describeIsXFunction(isString, 'String', 'String literal');
+  describeIsXFunction(isString, 'String');
 
 });
