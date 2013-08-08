@@ -1,5 +1,3 @@
-//= require "Object/inspect"
-
 Object.inspectProperties = function(object){
   var p, value, sets = [];
 

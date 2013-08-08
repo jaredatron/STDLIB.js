@@ -2,7 +2,7 @@
 //= require "Object/isNull"
 //= require "Object/isArguments"
 //= require "Object/isFunction"
-//= require "Object/inspect"
+//= require "Object/inspectProperties"
 
 Object.inspect = function(object) {
   try {
