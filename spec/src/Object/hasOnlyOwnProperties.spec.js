@@ -5,6 +5,7 @@ describe("Object.hasOnlyOwnProperties", function(){
     expect( Object.hasOnlyOwnProperties( {a:1}                ) ).toBe(true);
     expect( Object.hasOnlyOwnProperties( Object.create({}   ) ) ).toBe(true);
     expect( Object.hasOnlyOwnProperties( Object.create({a:1}) ) ).toBe(false);
+    expect( Object.hasOnlyOwnProperties( []                   ) ).toBe(false);
   });
 
 });
