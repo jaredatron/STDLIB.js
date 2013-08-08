@@ -1,7 +1,14 @@
 //= require "Object/isUndefined"
+//= require "Object/isNull"
+//= require "Object/isArguments"
+//= require "Object/isFunction"
+//= require "Object/inspect"
 
 Object.inspect = function(object) {
   try {
+    if (arguments.length === 0){
+      return Function.prototype.inspect.call(this);
+    }
     if (Object.isUndefined(object)){
       return 'undefined';
     }
@@ -14,8 +21,7 @@ Object.inspect = function(object) {
     if (Object.isFunction(object.inspect)){
       return object.inspect();
     }
-    return String(object);
-
+    return Object.inspectProperties(object);
   } catch (e) {
     if (e instanceof RangeError) return '...';
     throw e;

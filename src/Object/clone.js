@@ -2,8 +2,8 @@
 //= require "Number/clone"
 //= require "Array/clone"
 //= require "Function/clone"
-//= require "Object/extendOwnProperties"
 //= require "Object/extend"
+//= require "Object/isFunction"
 
 Object.clone = function(object) {
   var prototype, clone, property;
@@ -12,8 +12,11 @@ Object.clone = function(object) {
 
   if (typeof object.clone === 'function') return object.clone();
 
-  if (object.constructor && object.constructor.prototype && object instanceof object.constructor){
-    console.log('crazy clone!', object);
+  if (
+    Object.isFunction(object.constructor) &&
+    object.constructor !== Object &&
+    object instanceof object.constructor
+    ){
     prototype = object.constructor.prototype;
     clone = Object.create(prototype);
     for (property in object)
@@ -21,8 +24,6 @@ Object.clone = function(object) {
         clone[property] = object[property];
     return clone;
   }
-
-  console.log('basic extend!', object);
 
   return Object.extend({}, object);
 };

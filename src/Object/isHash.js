@@ -1,6 +1,5 @@
-// require 'Hash'
+//= require 'Hash'
 
 Object.isHash = function(object) {
-  // return object instanceof Hash;
-  return false;
+  return object instanceof Hash;
 };

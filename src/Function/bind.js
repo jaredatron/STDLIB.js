@@ -1,8 +1,8 @@
-if (!Function.prototype.bind) !function(){
+//= require "Array/slice"
 
-  function Empty() {}
+if (!Function.prototype.bind){
 
-  Function.prototype.bind = function bind(that) { // .length is 1
+  Function.prototype.bind = function(that) { // .length is 1
     // 1. Let Target be the this value.
     var target = this;
     // 2. If IsCallable(Target) is false, throw a TypeError exception.
@@ -12,7 +12,7 @@ if (!Function.prototype.bind) !function(){
     // 3. Let A be a new (possibly empty) internal list of all of the
     //   argument values provided after thisArg (arg1, arg2 etc), in order.
     // XXX slicedArgs will stand in for "A" if used
-    var args = _Array_slice_.call(arguments, 1); // for normal call
+    var args = Array.slice(arguments, 1); // for normal call
     // 4. Let F be a new native ECMAScript object.
     // 11. Set the [[Prototype]] internal property of F to the standard
     //   built-in Function prototype object as specified in 15.3.3.1.
@@ -43,7 +43,7 @@ if (!Function.prototype.bind) !function(){
 
         var result = target.apply(
           this,
-          args.concat(_Array_slice_.call(arguments))
+          args.concat(Array.slice(arguments))
         );
         if (Object(result) === result) {
           return result;
@@ -72,18 +72,15 @@ if (!Function.prototype.bind) !function(){
         // equiv: target.call(this, ...boundArgs, ...args)
         return target.apply(
           that,
-          args.concat(_Array_slice_.call(arguments))
+          args.concat(Array.slice(arguments))
         );
 
       }
 
     };
-    if(target.prototype) {
-      Empty.prototype = target.prototype;
-      bound.prototype = new Empty();
-      // Clean up dangling references.
-      Empty.prototype = null;
-    }
+
+    if (target.prototype) bound.prototype = Object.create(target.prototype);
+
     // XXX bound.length is never writable, so don't even try
     //
     // 15. If the [[Class]] internal property of Target is "Function", then
@@ -116,31 +113,7 @@ if (!Function.prototype.bind) !function(){
 
     // 22. Return F.
     return bound;
+
   };
 
-  // Shortcut to an often accessed properties, in order to avoid multiple
-  // dereference that costs universally.
-  // _Please note: Shortcuts are defined after `Function.prototype.bind` as we
-  // us it in defining shortcuts.
-  var call = Function.prototype.call;
-  var prototypeOfArray = Array.prototype;
-  var prototypeOfObject = Object.prototype;
-  var _Array_slice_ = prototypeOfArray.slice;
-  // Having a toString local variable name breaks in Opera so use _toString.
-  var _toString = call.bind(prototypeOfObject.toString);
-  var owns = call.bind(prototypeOfObject.hasOwnProperty);
-
-  // If JS engine supports accessors creating shortcuts.
-  var defineGetter;
-  var defineSetter;
-  var lookupGetter;
-  var lookupSetter;
-  var supportsAccessors;
-  if ((supportsAccessors = owns(prototypeOfObject, "__defineGetter__"))) {
-      defineGetter = call.bind(prototypeOfObject.__defineGetter__);
-      defineSetter = call.bind(prototypeOfObject.__defineSetter__);
-      lookupGetter = call.bind(prototypeOfObject.__lookupGetter__);
-      lookupSetter = call.bind(prototypeOfObject.__lookupSetter__);
-  }
-
-}();
+}
