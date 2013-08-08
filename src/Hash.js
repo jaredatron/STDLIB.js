@@ -68,7 +68,3 @@ Hash.prototype.map = function(iterator, context) {
   });
   return mapping;
 };
-
-Hash.prototype.inspect = function() {
-  return this.constructor.name+Object.inspectProperties(this._object);
-};
