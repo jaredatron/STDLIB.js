@@ -11,14 +11,14 @@ describe Stdlibjs do
   end
 
   describe ".relative_javascripts_path" do
-    it "should return 'src'" do
-      expect(Stdlibjs.relative_javascripts_path).to eq 'src'
+    it "should return 'app/assets/javascripts'" do
+      expect(Stdlibjs.relative_javascripts_path).to eq 'app/assets/javascripts'
     end
   end
 
   describe ".javascripts_path" do
-    it "should return #{gem_root+'/src'}" do
-      expect(Stdlibjs.javascripts_path).to eq Pathname(gem_root)+'src'
+    it "should return #{gem_root+'app/assets/javascripts'}" do
+      expect(Stdlibjs.javascripts_path).to eq Pathname(gem_root)+'app/assets/javascripts'
     end
   end
 

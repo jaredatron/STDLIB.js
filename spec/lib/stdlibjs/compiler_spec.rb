@@ -7,8 +7,7 @@ describe Stdlibjs::Compiler do
 
   describe ".javascripts_path" do
     it "should return the full path to the compiler javascripts" do
-      expect(described_class.javascripts_path).to eq \
-        Stdlibjs.gem_root + 'src'
+      expect(described_class.javascripts_path).to eq Stdlibjs.javascripts_path
     end
   end
 
@@ -26,7 +25,12 @@ describe Stdlibjs::Compiler do
     it "should return a list of all the included libraries" do
       compiler = described_class.new libraries: %w[Arguments]
       expect(compiler.resolved_libraries).to eq Set[
-        "isNaN", "Object/type", "Object/isNumber", "Arguments"
+        "STDLIB",
+        "STDLIB/global",
+        "Object/isNaN",
+        "Object/type",
+        "Object/isNumber",
+        "Arguments"
       ]
 
       compiler = described_class.new libraries: Stdlibjs.libraries
