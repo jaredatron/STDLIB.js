@@ -1,4 +1,4 @@
-//= require 'STDLIB'
+require('STDLIB');
 
 STDLIB.splitString = (function(){
   var boxedString = Object("a");

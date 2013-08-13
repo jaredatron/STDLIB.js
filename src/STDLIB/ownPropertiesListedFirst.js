@@ -1,4 +1,4 @@
-//= require 'STDLIB'
+require('STDLIB');
 
 STDLIB.ownPropertiesListedFirst = (function(){
   var p, o = Object.create({a:1});

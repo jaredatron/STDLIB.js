@@ -1,4 +1,4 @@
-//= require "isNaN"
+require("isNaN");
 
 Object.type = function(object) {
   if (Object.type === object) return 'global';

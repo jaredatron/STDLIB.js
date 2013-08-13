@@ -1,4 +1,4 @@
-//= require "Object/isNumber"
+require('Object/isNumber');
 
 function Arguments() {
   if (this instanceof arguments.callee)

@@ -1,6 +1,6 @@
-//= require 'STDLIB/toObject'
-//= require 'STDLIB/splitString'
-//= require "Array/indexOf"
+require('STDLIB/toObject');
+require('STDLIB/splitString');
+require('Array/indexOf');
 
 // ES5 15.4.4.14
 // http://es5.github.com/#x15.4.4.14

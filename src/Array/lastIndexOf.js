@@ -1,5 +1,5 @@
-//= require 'STDLIB/toObject'
-//= require 'STDLIB/toInteger'
+require('STDLIB/toObject');
+require('STDLIB/toInteger');
 
 // ES5 15.4.4.15
 // http://es5.github.com/#x15.4.4.15

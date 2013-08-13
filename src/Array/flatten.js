@@ -1,4 +1,4 @@
-//= require "Array/isArray"
+require('Array/isArray');
 
 if (!Array.prototype.flatten){
   Array.prototype.flatten = function() {

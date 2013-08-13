@@ -1,3 +1,1 @@
-//= require_self
-
 STDLIB = {};

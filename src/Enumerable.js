@@ -1,5 +1,5 @@
-// //= require "Function/bind"
-// //= require "Object/isNumber"
+// require('Function/bind');
+// require('Object/isNumber');
 
 // Enumerable = {};
 

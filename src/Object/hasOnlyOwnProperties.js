@@ -1,5 +1,5 @@
-//= require "Object/type"
-//= require "STDLIB/ownPropertiesListedFirst"
+require('Object/type');
+require('STDLIB/ownPropertiesListedFirst');
 
 Object.hasOnlyOwnProperties = function(object){
   if (Object.type(object) !== 'Object') return false;

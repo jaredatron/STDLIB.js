@@ -1,2 +1,2 @@
-//= require "Object/isFunction"
+require('Object/isFunction');
 isFunction = Object.isFunction;

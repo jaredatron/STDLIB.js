@@ -1,5 +1,5 @@
-//= require "Object/isString"
-//= require "Object/isFunction"
+require('Object/isString');
+require('Object/isFunction');
 
 if (!Array.prototype.forEach){
   //  https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js

@@ -1,4 +1,4 @@
-//= require 'Object/isObject'
+require('Object/isObject');
 
 Object.isEmpty = function(object) {
   if (!Object.isObject(object)) return false;

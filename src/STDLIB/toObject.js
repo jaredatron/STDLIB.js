@@ -1,4 +1,4 @@
-//= require 'STDLIB'
+require('STDLIB');
 
 // ES5 9.9
 // http://es5.github.com/#x9.9

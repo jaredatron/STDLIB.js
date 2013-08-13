@@ -1,2 +1,2 @@
-//= require "Object/isNumber"
+require('Object/isNumber');
 isNumber = Object.isNumber;
