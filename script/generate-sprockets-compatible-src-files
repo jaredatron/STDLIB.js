@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+
+from_files_path = Bundler.root.join('src')
+  to_files_path = Bundler.root.join('app/assets/javascripts')
+
+to_files_path.rmtree if to_files_path.exist?
+
+src_files = Dir[from_files_path+'**/*.js']
+
+
+
+src_files.each do |src_file|
+  from = Pathname(src_file)
+  path = from.relative_path_from(from_files_path)
+  to   = to_files_path + path
+  dir  = to.dirname
+  dir.mkdir unless dir.exist?
+  source = from.read
+  source.gsub!(%r{require\('(.+)'\);?}, '//= require \'\1\'')
+  to.open('w'){|file| file.write source }
+  puts path.to_s
+end
