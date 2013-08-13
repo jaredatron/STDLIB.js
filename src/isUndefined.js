@@ -1,2 +1,2 @@
-//= require "Object/isUndefined"
+require("Object/isUndefined");
 isUndefined = Object.isUndefined;

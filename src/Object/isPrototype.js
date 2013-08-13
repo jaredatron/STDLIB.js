@@ -1,4 +1,4 @@
-//= require "Object/type"
+require("Object/type");
 
 Object.isPrototype = function(object){
   return(

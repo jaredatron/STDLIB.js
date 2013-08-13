@@ -1,4 +1,4 @@
-//= require "Array/indexOf"
+require("Array/indexOf");
 
 if (!Array.prototype.uniq){
   Array.prototype.uniq = function(){

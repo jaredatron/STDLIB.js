@@ -1,9 +1,9 @@
-//= require "String/clone"
-//= require "Number/clone"
-//= require "Array/clone"
-//= require "Function/clone"
-//= require "Object/extend"
-//= require "Object/isFunction"
+require("String/clone");
+require("Number/clone");
+require("Array/clone");
+require("Function/clone");
+require("Object/extend");
+require("Object/isFunction");
 
 Object.clone = function(object) {
   var prototype, clone, property;

@@ -1,4 +1,4 @@
-//= require "Object/type"
+require("Object/type");
 
 // ES5 15.4.3.2
 // http://es5.github.com/#x15.4.3.2

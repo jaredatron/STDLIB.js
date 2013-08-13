@@ -1,4 +1,4 @@
-//= require "Arguments"
+require("Arguments");
 
 Function.prototype.methodize = function() {
   if (this._methodized) return this._methodized;

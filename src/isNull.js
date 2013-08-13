@@ -1,2 +1,2 @@
-//= require "Object/isNull"
+require("Object/isNull");
 isNull = Object.isNull;

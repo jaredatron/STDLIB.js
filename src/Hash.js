@@ -1,7 +1,7 @@
-//= require "Object/each"
-//= require "Object/clone"
-//= require "Object/keys"
-//= require "Object/values"
+require("Object/each");
+require("Object/clone");
+require("Object/keys");
+require("Object/values");
 
 function Hash(object){
   if (!Object.isObject(object)) object = {};

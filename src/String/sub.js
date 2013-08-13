@@ -1,4 +1,4 @@
-//= require "String/gsub"
+require("String/gsub");
 
 String.prototype.sub = function(pattern, replacement, count) {
   var replacer = Object.isFunction(replacement) ?
