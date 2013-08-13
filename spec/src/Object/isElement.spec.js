@@ -1,5 +1,5 @@
 describe("Object.isElement", function(){
 
-  JasmineSupport.isXTestsFor('Element');
+  describeIsXFunction(Object.isElement, 'Element');
 
 });

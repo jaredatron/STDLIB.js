@@ -1,5 +1,5 @@
 describe("Object.isDate", function(){
 
-  JasmineSupport.isXTestsFor('Date');
+  describeIsXFunction(Object.isDate, 'Date');
 
 });

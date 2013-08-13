@@ -40,9 +40,12 @@ describe("Object.type", function() {
   });
 
 
+  it("Object.type(Object) === 'Function'", function(){
+    expect( Object.type(Object) ).toBe('Function');
+  });
+
 
   it("Object.type(window) === 'global'", function(){
-    console.log(this)
     expect( Object.type(window) ).toBe('global');
   });
 

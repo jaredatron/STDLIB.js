@@ -1,5 +1,5 @@
 describe("Object.isString", function(){
 
-  JasmineSupport.isXTestsFor('String');
+  describeIsXFunction(Object.isString, 'String');
 
 });

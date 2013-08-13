@@ -1,3 +1,5 @@
 describe("isUndefined", function(){
-  it("see Object.isUndefined tests");
+
+  describeIsXFunction(isUndefined, 'undefined');
+
 });

@@ -1,5 +1,5 @@
 describe("isHash", function(){
 
-  it("see Object.isHash tests");
+  describeIsXFunction(isHash, 'Hash');
 
 });

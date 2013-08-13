@@ -1,6 +1,6 @@
 Function.prototype.clone = function() {
-  var method = this;
+  var _function = this;
   return function(){
-    return method.apply(this, arguments);
+    return _function.apply(this, arguments);
   };
 };

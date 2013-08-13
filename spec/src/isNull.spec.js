@@ -1,3 +1,5 @@
 describe("isNull", function(){
-  it("see Object.isNull tests");
+
+  describeIsXFunction(isNull, 'Null');
+
 });

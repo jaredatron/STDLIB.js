@@ -1,5 +1,5 @@
 describe("isArguments", function(){
 
-  it("see Object.isArguments tests");
+  describeIsXFunction(isArguments, 'Arguments');
 
 });

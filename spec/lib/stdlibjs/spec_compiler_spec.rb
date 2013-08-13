@@ -41,7 +41,7 @@ describe Stdlibjs::SpecCompiler do
       expect(compiler.source.split($/).length).to be_within(40).of(50)
 
       compiler = described_class.new libraries: Stdlibjs.libraries
-      expect(compiler.source.split($/).length).to be_within(200).of(500)
+      expect(compiler.source.split($/).length).to be_within(900).of(1500)
     end
   end
 

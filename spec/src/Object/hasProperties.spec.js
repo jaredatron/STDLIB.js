@@ -1,0 +1,3 @@
+describe("Object.hasProperties", function(){
+
+});
