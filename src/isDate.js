@@ -1,2 +1,2 @@
-require('Object/isDate');
+require('./Object/isDate');
 isDate = Object.isDate;

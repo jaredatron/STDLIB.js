@@ -1,4 +1,4 @@
-require('STDLIB/negativeDate');
+require('../STDLIB/negativeDate');
 
 // ES5 15.9.5.43
 // http://es5.github.com/#x15.9.5.43

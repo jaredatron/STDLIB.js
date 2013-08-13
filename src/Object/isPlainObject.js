@@ -1,7 +1,7 @@
-require('Object/hasOnlyOwnProperties');
-require('Object/isObject');
-require('Object/isPrototype');
-require('Object/isFunction');
+require('../Object/hasOnlyOwnProperties');
+require('../Object/isObject');
+require('../Object/isPrototype');
+require('../Object/isFunction');
 
 Object.isPlainObject = function(object) {
   return(

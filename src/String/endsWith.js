@@ -1,4 +1,4 @@
-require('Object/isNumber');
+require('../Object/isNumber');
 
 /**
  *  String#endsWith(substring[, position]) -> Boolean

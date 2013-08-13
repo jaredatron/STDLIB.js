@@ -1,2 +1,2 @@
-require('Array/isArray');
+require('../Array/isArray');
 Object.isArray = Array.isArray;

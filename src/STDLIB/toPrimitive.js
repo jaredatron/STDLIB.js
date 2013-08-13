@@ -1,4 +1,4 @@
-require('STDLIB');
+require('../STDLIB');
 
 
 STDLIB.toPrimitive = function(input) {

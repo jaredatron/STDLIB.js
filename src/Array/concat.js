@@ -1,4 +1,4 @@
-require('Array/clone');
+require('../Array/clone');
 
 if ((function() {
     return [].concat(arguments)[0][0] !== 1;

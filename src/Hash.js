@@ -1,9 +1,11 @@
-require('Object/each');
-require('Object/clone');
-require('Object/keys');
-require('Object/values');
+require('./STDLIB/global');
+require('./Object/isObject');
+require('./Object/each');
+require('./Object/clone');
+require('./Object/keys');
+require('./Object/values');
 
-function Hash(object){
+Hash = function Hash(object){
   if (!Object.isObject(object)) object = {};
   this._object = Object.clone(Hash.toObject(object));
 }

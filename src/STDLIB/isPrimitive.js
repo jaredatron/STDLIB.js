@@ -1,4 +1,4 @@
-require('STDLIB');
+require('../STDLIB');
 
 STDLIB.isPrimitive = function(input) {
   var type = typeof input;

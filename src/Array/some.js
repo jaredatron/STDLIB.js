@@ -1,5 +1,5 @@
-require('STDLIB/toObject');
-require('STDLIB/splitString');
+require('../STDLIB/toObject');
+require('../STDLIB/splitString');
 
 // ES5 15.4.4.17
 // http://es5.github.com/#x15.4.4.17

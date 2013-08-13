@@ -1,4 +1,4 @@
-require('Array/slice');
+require('../Array/slice');
 
 Object.extend = function(target) {
   var

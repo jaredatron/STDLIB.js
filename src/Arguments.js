@@ -1,6 +1,6 @@
-require('Object/isNumber');
+require('./Object/isNumber');
 
-function Arguments() {
+Arguments = function Arguments() {
   if (this instanceof arguments.callee)
     throw new TypeError('Illegal constructor');
 
