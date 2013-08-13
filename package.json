@@ -13,7 +13,8 @@
   },
   "keywords": [],
   "dependencies" : {
-    "browserify" : "*"
+    "browserify" : "*",
+    "walk" : "*"
   },
   "analyze": false,
   "license": "MIT",

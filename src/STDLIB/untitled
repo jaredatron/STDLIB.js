@@ -1,0 +1,3 @@
+require('../STDLIB');
+
+STDLIB.isNode = typeof module !== 'undefined' && module.exports;

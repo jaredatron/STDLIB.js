@@ -1,6 +1,5 @@
 require('../STDLIB');
 
-
 STDLIB.toPrimitive = function(input) {
   var val, valueOf, toString;
   if (STDLIB.isPrimitive(input)) {

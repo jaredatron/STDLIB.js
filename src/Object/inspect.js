@@ -1,3 +1,4 @@
+require('../STDLIB/isNode');
 require('../Object/isUndefined');
 require('../Object/isNull');
 require('../Object/isArguments');
