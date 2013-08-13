@@ -1,5 +1,5 @@
 describe("Object.isNaN", function(){
 
-  describeIsXFunction(isNaN, 'NaN');
+  describeIsXFunction(Object.isNaN, 'NaN');
 
 });
