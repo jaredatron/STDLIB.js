@@ -1,8 +1,8 @@
-require("isNaN");
+require('Object/isNaN');
 
 Object.type = function(object) {
-  if (Object.type === object) return 'global';
-  if (isNaN(object)) return 'NaN';
+  if (Object.type.global === object) return 'global';
+  if (Object.isNaN(object)) return 'NaN';
   return Object.prototype.toString.call(object).slice(8,-1)
 };
 

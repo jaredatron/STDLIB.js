@@ -1,2 +1,3 @@
-//= require 'isNaN'
-Object.isNaN = isNaN;
+Object.isNaN = function(object){
+  return String(object) === "NaN";
+};
