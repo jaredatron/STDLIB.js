@@ -1,0 +1,23 @@
+{
+  "name": "STDLIB",
+  "preferGlobal": true,
+  "version": "0.0.1",
+  "author": "Jared Grippe <jared@deadlyicon.com>",
+  "description": "commonly wanted JS extensions",
+  "bin": {},
+  "scripts": {},
+  "files": ["./src"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deadlyicon/STDLIB.js.git"
+  },
+  "keywords": [],
+  "dependencies" : {
+    "browserify" : "*"
+  },
+  "analyze": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
