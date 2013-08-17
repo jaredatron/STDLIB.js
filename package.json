@@ -6,7 +6,7 @@
   "description": "commonly wanted JS extensions",
   "bin": {},
   "scripts": {},
-  "files": ["./src"],
+  "files": ["./"],
   "repository": {
     "type": "git",
     "url": "https://github.com/deadlyicon/STDLIB.js.git"
