@@ -3,10 +3,27 @@ require "pathname"
 
 module Stdlibjs
 
+
   autoload :Compiler, "stdlibjs/compiler"
 
   def self.gem_root
     @root ||= Pathname(File.expand_path('../../', __FILE__))
+  end
+
+  def self.source_files
+    @source_files ||= begin
+      @source_files = gem_root.join('source_files.txt').read.split(/\n/)
+      @source_files.map!{|p| Stdlibjs.gem_root.join(p).to_s }
+      @source_files = Dir[*@source_files]
+      @source_files.map!(&method(:Pathname))
+    end
+  end
+
+  def self.spec_files
+    @spec_files ||= source_files.map do |path|
+      relative_path = path.relative_path_from(gem_root)
+      gem_root.join 'spec', relative_path.to_s.sub(/\.js/, '.spec.js')
+    end
   end
 
   def self.relative_src_path
@@ -33,16 +50,12 @@ module Stdlibjs
   end
 
   def self.generate_sprockets_compatible_src_files!
-    from_files_path = src_path
-      to_files_path = javascripts_path
-
+    to_files_path = javascripts_path
     to_files_path.rmtree if to_files_path.exist?
 
-    src_files = Dir[from_files_path+'**/*.js']
-
-    src_files.each do |src_file|
+    source_files.each do |src_file|
       from = Pathname(src_file)
-      path = from.relative_path_from(from_files_path)
+      path = from.relative_path_from(gem_root)
       to   = to_files_path + path
       dir  = to.dirname
       dir.mkdir unless dir.exist?
