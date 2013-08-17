@@ -12,10 +12,6 @@
     "url": "https://github.com/deadlyicon/STDLIB.js.git"
   },
   "keywords": [],
-  "dependencies" : {
-    "browserify" : "*",
-    "walk" : "*"
-  },
   "analyze": false,
   "license": "MIT",
   "engines": {
