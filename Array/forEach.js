@@ -1,3 +1,4 @@
+require('../STDLIB/toObject');
 require('../Object/isString');
 require('../Object/isFunction');
 
