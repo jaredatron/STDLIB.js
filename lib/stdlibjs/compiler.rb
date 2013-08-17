@@ -4,12 +4,12 @@ require 'sprockets'
 class Stdlibjs::Compiler
 
   def self.javascripts_path
-    Stdlibjs.javascripts_path
+    Stdlibjs.gem_root
   end
 
-  def initialize options
+  def initialize options={}
     @download_url = options[:download_url]
-    @libraries = options.fetch(:libraries).to_set
+    @libraries = options.fetch(:libraries){ Stdlibjs.libraries }.to_set
     if libraries.empty?
       raise ArgumentError, "libraries cannot be empty"
     end
@@ -48,7 +48,7 @@ class Stdlibjs::Compiler
   private
 
   def sprockets_paths
-    [Stdlibjs.javascripts_path, self.class.javascripts_path]
+    [self.class.javascripts_path]
   end
 
   def asset

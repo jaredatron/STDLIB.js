@@ -3,7 +3,7 @@ require 'stdlibjs/compiler'
 class Stdlibjs::SpecCompiler < Stdlibjs::Compiler
 
   def self.javascripts_path
-    Stdlibjs.gem_root+'spec/src'
+    Stdlibjs.spec_path
   end
 
   def initialize(*args)

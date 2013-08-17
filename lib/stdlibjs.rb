@@ -10,6 +10,10 @@ module Stdlibjs
     @root ||= Pathname(File.expand_path('../../', __FILE__))
   end
 
+  def self.spec_path
+    @spec_path ||= Stdlibjs.gem_root+'spec'
+  end
+
   def self.source_files
     @source_files ||= begin
       @source_files = gem_root.join('source_files.txt').read.split(/\n/)
@@ -26,26 +30,26 @@ module Stdlibjs
     end
   end
 
-  def self.relative_src_path
-    'src'
-  end
+  # def self.relative_src_path
+  #   'src'
+  # end
 
-  def self.relative_javascripts_path
-    'app/assets/javascripts'
-  end
+  # def self.relative_javascripts_path
+  #   'app/assets/javascripts'
+  # end
 
-  def self.src_path
-    @src_path ||= gem_root + relative_src_path
-  end
+  # def self.src_path
+  #   @src_path ||= gem_root + relative_src_path
+  # end
 
-  def self.javascripts_path
-    @javascripts_path ||= gem_root + relative_javascripts_path
-  end
-  singleton_class.send :alias_method, :path, :javascripts_path
+  # def self.javascripts_path
+  #   @javascripts_path ||= gem_root + relative_javascripts_path
+  # end
+  # singleton_class.send :alias_method, :path, :javascripts_path
 
   def self.libraries
-    @libraries ||= Dir[javascripts_path+'**/*.js'].map do |path|
-      Pathname(path).relative_path_from(javascripts_path).to_s.sub(/\.js$/,'')
+    source_files.map do |path|
+      path.relative_path_from(gem_root).to_s.sub(/\.js$/,'')
     end.to_set
   end
 
@@ -67,6 +71,6 @@ module Stdlibjs
 
 end
 
-Stdlibjs.generate_sprockets_compatible_src_files!
+# Stdlibjs.generate_sprockets_compatible_src_files!
 
 require "stdlibjs/rails" if defined? Rails
