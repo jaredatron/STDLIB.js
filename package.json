@@ -4,17 +4,9 @@
   "version": "0.0.1",
   "author": "Jared Grippe <jared@deadlyicon.com>",
   "description": "commonly wanted JS extensions",
-  "bin": {},
-  "scripts": {},
-  "files": ["./"],
   "repository": {
     "type": "git",
     "url": "https://github.com/deadlyicon/STDLIB.js.git"
   },
-  "keywords": [],
-  "analyze": false,
-  "license": "MIT",
-  "engines": {
-    "node": ">=0.6"
-  }
+  "license": "MIT"
 }
