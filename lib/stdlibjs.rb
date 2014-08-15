@@ -29,8 +29,8 @@ module Stdlibjs
   end
 
 
-  def self.compile(options={})
-    Compiler.compile(options)
+  def self.compile(libraries=nil)
+    Compiler.compile(libraries: libraries)
   end
 
 end
