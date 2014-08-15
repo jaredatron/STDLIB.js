@@ -30,7 +30,7 @@ module Stdlibjs
 
 
   def self.compile
-
+    puts Compiler.new.compile
   end
 
 end

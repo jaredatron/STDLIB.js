@@ -7,14 +7,22 @@ class Stdlibjs::Cli
   end
 
   def initialize argv
-    binding.pry
-    # command = argv.first
-    # command ||= :list
-    # if respond_to? command
-    #   send(command)
-    # else
-    #   puts "unknown command #{command}"
-    # end
+    command = argv.first
+    command ||= :list
+    if respond_to? command
+      send(command)
+    else
+      puts "unknown command #{command}"
+    end
+  end
+
+  def console
+    require 'pry'
+    Pry.start
+  end
+
+  def compile
+    Stdlibjs.compile
   end
 
   def list

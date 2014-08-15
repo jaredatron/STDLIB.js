@@ -5,9 +5,25 @@ class Stdlibjs::Compiler
 
 
 
+  def libraries
+    Stdlibjs.libraries
+  end
 
-  def asset
-    @asset ||= sprockets.find_asset('build.js')
+  def comment
+    <<-JS.gsub(/^      /,'')
+      /* Stdlib.js
+       *
+       * includes:
+       *   #{libraries.to_a.sort.join("\n       *   ")}
+       *
+       */
+    JS
+  end
+
+  def compile libraries=self.libraries
+    sprockets.libraries = libraries
+    sprockets.comment = comment
+    sprockets.find_asset('build.js').to_s
   end
 
   def sprockets
@@ -15,12 +31,9 @@ class Stdlibjs::Compiler
     @sprockets = Sprockets::Environment.new(Stdlibjs.root)
     @sprockets.append_path 'lib/stdlibjs/compiler/javascripts'
     @sprockets.append_path Stdlibjs.src
-    # @sprockets.class.class_eval{
-    #   attr_accessor :libraries, :comment
-    # }
-    # @sprockets.libraries = libraries
-    # @sprockets.comment = comment
-
+    @sprockets.class.class_eval{
+      attr_accessor :libraries, :comment
+    }
     @sprockets
   end
 
