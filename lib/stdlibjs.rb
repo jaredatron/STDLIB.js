@@ -28,6 +28,11 @@ module Stdlibjs
     end.sort.freeze
   end
 
+
+  def self.compile
+
+  end
+
 end
 
 require "stdlibjs/rails" if defined? Rails

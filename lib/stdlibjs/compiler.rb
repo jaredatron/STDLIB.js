@@ -3,6 +3,47 @@ require 'sprockets'
 
 class Stdlibjs::Compiler
 
+
+
+
+  def asset
+    @asset ||= sprockets.find_asset('build.js')
+  end
+
+  def sprockets
+    return @sprockets if defined? @sprockets
+    @sprockets = Sprockets::Environment.new(Stdlibjs.root)
+    @sprockets.append_path 'lib/stdlibjs/compiler/javascripts'
+    @sprockets.append_path Stdlibjs.src
+    # @sprockets.class.class_eval{
+    #   attr_accessor :libraries, :comment
+    # }
+    # @sprockets.libraries = libraries
+    # @sprockets.comment = comment
+
+    @sprockets
+  end
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if false
+
   def self.javascripts_path
     Stdlibjs.javascripts_path
   end

@@ -7,13 +7,14 @@ class Stdlibjs::Cli
   end
 
   def initialize argv
-    command = argv.first
-    command ||= :list
-    if respond_to? command
-      send(command)
-    else
-      puts "unknown command #{command}"
-    end
+    binding.pry
+    # command = argv.first
+    # command ||= :list
+    # if respond_to? command
+    #   send(command)
+    # else
+    #   puts "unknown command #{command}"
+    # end
   end
 
   def list
