@@ -1,16 +1,16 @@
-require("Array/slice");
+if (!String.extend) {
 
-Object.extend = function(target) {
-  var
-    i = 0,
-    mixins = Array.slice(arguments, 1),
-    p, mixin;
+  Object.extend = function(target) {
+    var p, source, sources = [].slice.call(arguments, 1)
 
-  while (i < mixins.length) {
-    mixin = mixins[i];
-    for (p in mixin) target[p] = mixin[p];
-    i++;
+    while (sources.length) {
+      source = sources.shift();
+      if (source) for (p in source) target[p] = source[p];
+    };
+
+    return target;
   };
 
-  return target;
-};
+}
+
+

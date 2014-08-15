@@ -1,5 +1,5 @@
-require("Array/forEach");
+//= require ./forEach
 
 if (!Array.prototype.each){
-  Array.prototype.each = Array.prototype.forEach
+  Array.prototype.each = Array.prototype.forEach;
 }
