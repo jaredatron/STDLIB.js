@@ -7,10 +7,10 @@ class Stdlibjs::Cli
   end
 
   def initialize argv
-    command = argv.first
+    command = argv.shift
     command ||= :list
     if respond_to? command
-      send(command)
+      send(command, *argv)
     else
       puts "unknown command #{command}"
     end
@@ -21,8 +21,8 @@ class Stdlibjs::Cli
     Pry.start
   end
 
-  def compile
-    puts Stdlibjs.compile
+  def compile *libraires
+    puts Stdlibjs.compile(libraires)
   end
 
   def list

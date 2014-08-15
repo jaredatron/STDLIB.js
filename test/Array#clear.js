@@ -1,5 +1,3 @@
-// require('../src/Array#clear')
-// require('stdlib/src/Array#clear')
 require('../')('Array#clear')
 
 describe('Array#clear', function(){

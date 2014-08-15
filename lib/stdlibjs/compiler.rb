@@ -15,19 +15,38 @@ class Stdlibjs::Compiler
     @libraries ||= Stdlibjs.libraries
   end
 
+  def dependencies
+    @dependencies ||= libraries.map do |library|
+      dependencies_for library
+    end.flatten.uniq.sort
+  end
+
+  def all_libraries
+    @all_libraries ||= libraries + dependencies
+  end
+
   def comment
     @comment ||= <<-JS.gsub(/^      /,'')
       /* Stdlib.js
        *
-       * includes:
+       * requested:
        *   #{libraries.to_a.sort.join("\n       *   ")}
+       *
+       * included:
+       *   #{all_libraries.to_a.sort.join("\n       *   ")}
        *
        */
     JS
   end
 
   def to_s
-    @to_s ||= sprockets.find_asset('build.js').to_s
+    @to_s ||= asset.to_s
+  end
+
+  def asset
+    sprockets.libraries = libraries
+    sprockets.comment = comment
+    sprockets.find_asset('build.js')
   end
 
   def sprockets
@@ -38,9 +57,13 @@ class Stdlibjs::Compiler
     @sprockets.class.class_eval{
       attr_accessor :libraries, :comment
     }
-    sprockets.libraries = libraries
-    sprockets.comment = comment
     @sprockets
+  end
+
+  def dependencies_for library
+    sprockets.find_asset(library).dependencies.map do |dependency|
+      dependency.pathname.relative_path_from(Stdlibjs.src).to_s.sub(/\.js$/,'')
+    end
   end
 
 end

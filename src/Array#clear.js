@@ -1,4 +1,4 @@
-require('./Array#clone')
+//= require Array#clone
 
 /**
  *  Array#clear() -> Array
