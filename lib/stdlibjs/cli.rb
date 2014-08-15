@@ -22,7 +22,7 @@ class Stdlibjs::Cli
   end
 
   def compile
-    Stdlibjs.compile
+    puts Stdlibjs.compile
   end
 
   def list

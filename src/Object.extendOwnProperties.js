@@ -1,4 +1,4 @@
-require("Array/slice");
+//= require Array.slice
 
 Object.extendOwnProperties = function(target) {
   var p, mixin,

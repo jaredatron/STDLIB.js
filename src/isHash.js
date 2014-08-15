@@ -1,2 +1,3 @@
-require("Object/isHash");
+//= require Object.isHash
+
 isHash = Object.isHash;

@@ -1,4 +1,4 @@
-require("Arguments");
+//= require Arguments
 
 Function.prototype.curry = function() {
   var _function = this, args = arguments;

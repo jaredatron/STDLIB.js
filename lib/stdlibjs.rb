@@ -29,8 +29,8 @@ module Stdlibjs
   end
 
 
-  def self.compile
-    puts Compiler.new.compile
+  def self.compile(options={})
+    Compiler.compile(options)
   end
 
 end

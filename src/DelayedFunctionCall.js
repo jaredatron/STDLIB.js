@@ -1,3 +1,5 @@
+// TODO Make this a promise
+
 function DelayedFunctionCall(_function, delay){
   this.start     = Date.now();
   this.delay     = delay * 1000 || 0;

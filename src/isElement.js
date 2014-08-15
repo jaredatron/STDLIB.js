@@ -1,2 +1,3 @@
-require("Object/isElement");
+//= require Object.isElement
+
 isElement = Object.isElement;

@@ -1,2 +1,3 @@
-require("Object/isArguments");
+//= require Object.isArguments
+
 isArguments = Object.isArguments;

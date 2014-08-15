@@ -1,4 +1,4 @@
-if (!String.extend) {
+if (!Object.extend) {
 
   Object.extend = function(target) {
     var p, source, sources = [].slice.call(arguments, 1)

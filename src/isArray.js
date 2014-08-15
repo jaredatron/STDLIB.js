@@ -1,2 +1,3 @@
-require("Object/isArray");
+//= require Object.isArray
+
 isArray = Object.isArray;

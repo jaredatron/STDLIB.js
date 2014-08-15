@@ -1,4 +1,4 @@
-require("Array/slice");
+//= require Array.slice
 
 if (!Function.prototype.bind){
 

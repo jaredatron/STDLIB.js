@@ -3,14 +3,20 @@ require 'sprockets'
 
 class Stdlibjs::Compiler
 
+  def self.compile options={}
+    new(options).to_s
+  end
 
+  def initialize options={}
+    @libraries = options[:libraries]
+  end
 
   def libraries
-    Stdlibjs.libraries
+    @libraries ||= Stdlibjs.libraries
   end
 
   def comment
-    <<-JS.gsub(/^      /,'')
+    @comment ||= <<-JS.gsub(/^      /,'')
       /* Stdlib.js
        *
        * includes:
@@ -20,10 +26,8 @@ class Stdlibjs::Compiler
     JS
   end
 
-  def compile libraries=self.libraries
-    sprockets.libraries = libraries
-    sprockets.comment = comment
-    sprockets.find_asset('build.js').to_s
+  def to_s
+    @to_s ||= sprockets.find_asset('build.js').to_s
   end
 
   def sprockets
@@ -34,6 +38,8 @@ class Stdlibjs::Compiler
     @sprockets.class.class_eval{
       attr_accessor :libraries, :comment
     }
+    sprockets.libraries = libraries
+    sprockets.comment = comment
     @sprockets
   end
 

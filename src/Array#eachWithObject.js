@@ -1,4 +1,4 @@
-require("Array/forEach");
+//= require Array.forEach
 
 if (!Array.prototype.eachWithObject){
   Array.prototype.eachWithObject = function(object, iterator, context) {
