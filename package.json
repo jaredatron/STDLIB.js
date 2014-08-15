@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git@github.com:deadlyicon/STDLIB.js.git"
   },
-  "main": "stdlib.js",
+  "main": "./src",
   "version": "0.0.1",
   "devDependencies": {
     "docco": "0.6.x",

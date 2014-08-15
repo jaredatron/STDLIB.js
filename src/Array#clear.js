@@ -1,3 +1,5 @@
+require('./Array#clone')
+
 /**
  *  Array#clear() -> Array
  *
@@ -11,7 +13,9 @@
  *      guys
  *      // -> []
 **/
-Array.prototype.clear = function() {
-  this.length = 0;
-  return this;
-};
+if (!Array.prototype.clear){
+  Array.prototype.clear = function() {
+    this.length = 0;
+    return this;
+  };
+}

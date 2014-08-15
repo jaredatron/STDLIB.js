@@ -1,3 +1,5 @@
+// require('../src/Array#clear')
+// require('stdlib/src/Array#clear')
 require('../')('Array#clear')
 
 describe('Array#clear', function(){
@@ -6,5 +8,6 @@ describe('Array#clear', function(){
     expect( array.length  ).to.be(3)
     expect( array.clear() ).to.be(array)
     expect( array.length  ).to.be(0)
+    expect( array.clone   ).to.be.a(Function)
   });
 });
