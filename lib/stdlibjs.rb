@@ -28,9 +28,32 @@ module Stdlibjs
     end.sort.freeze
   end
 
-
   def self.compile(libraries=nil)
     Compiler.compile(libraries: libraries)
+  end
+
+  def self.path_for library
+    src.join("#{library}.js")
+  end
+
+  def self.dependencies_for library, deep=false
+    dependencies = []
+    path_for(library).each_line do |line|
+      dependency = line[%r{^//= require (.+)}, 1] or break
+      dependencies << dependency
+      dependencies += dependencies_for(dependency) if deep
+    end
+    dependencies.uniq
+  end
+
+  class Library
+    def initialize name
+      @name = name
+    end
+    attr_reader :name
+    def path
+      Stdlibjs.src.join("#{name}.js")
+    end
   end
 
 end
