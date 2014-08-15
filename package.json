@@ -1,0 +1,37 @@
+{
+  "name": "stdlib",
+  "description": "STDLIB.js is a collection of commonly desired polyfills and additions that extend native JavaScript objects.",
+  "homepage": "stdlibjs.com",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser",
+    "polyfills"
+  ],
+  "author": "Jared Grippe <jared@jaredgrippe.me>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:deadlyicon/STDLIB.js.git"
+  },
+  "main": "stdlib.js",
+  "version": "0.0.1",
+  "devDependencies": {
+    "docco": "0.6.x"
+  },
+  "scripts": {
+
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/jashkenas/underscore/master/LICENSE"
+    }
+  ],
+  "files": [
+    "stdlib.js",
+    "src",
+    "LICENSE"
+  ]
+}
