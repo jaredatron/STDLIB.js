@@ -2,26 +2,30 @@ require "stdlibjs/version"
 require "pathname"
 
 module Stdlibjs
-
   autoload :Compiler, "stdlibjs/compiler"
 
-  def self.gem_root
-    @root ||= Pathname(File.expand_path('../../', __FILE__))
+  def self.root
+    @root ||= Pathname File.expand_path('../..', __FILE__)
   end
 
-  def self.relative_javascripts_path
-    'src'
+  def self.src
+    @src ||= root.join('src')
   end
 
-  def self.javascripts_path
-    @javascripts_path ||= gem_root + relative_javascripts_path
+  def self.specs
+    @specs ||= root.join('specs')
   end
-  singleton_class.send :alias_method, :path, :javascripts_path
+
+  def self.library_paths
+    @library_paths ||= Dir[src.join('**/*.js')].map do |path|
+      Pathname(path)
+    end.sort.freeze
+  end
 
   def self.libraries
-    @libraries ||= Dir[javascripts_path+'**/*.js'].map do |path|
-      Pathname(path).relative_path_from(javascripts_path).to_s.sub(/\.js$/,'')
-    end.to_set
+    @libraries ||= library_paths.map do |path|
+      path.relative_path_from(src).to_s.sub(/\.js$/,'')
+    end.sort.freeze
   end
 
 end
