@@ -23,7 +23,7 @@
     "mocha": "1.21.x"
   },
   "scripts": {
-    "test": "mocha --reporter spec test/"
+    "test": "mocha --reporter spec -r test/support.js test/"
   },
   "licenses": [
     {
